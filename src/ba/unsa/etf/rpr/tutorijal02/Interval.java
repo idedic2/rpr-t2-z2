@@ -83,19 +83,19 @@ public class Interval {
 
     public String toString(){
 
-        String s=new String();
 
-        if(this.isNull()) s="()";
 
-        if(px1==true && px2==true) s="["+x1+","+x2+"]";
+        if(x1==0 && x2==0 && px1==false && px2==false) return "()";
 
-        if(px1==true && px2==false) s="["+x1+","+x2+")";
+        if(px1==true && px2==true)  return "["+x1+","+x2+"]";
 
-        if(px1==false && px2==true) s="("+x1+","+x2+"]";
+        if(px1==true && px2==false) return "["+x1+","+x2+")";
 
-        else s="("+x1+","+x2+")";
+         if(px1==false && px2==true)  return "("+x1+","+x2+"]";
 
-        return s;
+         return  "("+x1+","+x2+")";
+
+
 
     }
 
